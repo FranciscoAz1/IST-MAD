@@ -1,0 +1,172 @@
+
+\documentclass[12pt,a4paper,oneside]{report}
+\input{./IST-UL-Project-Report-Preamble}
+
+\begin{document}
+\pagestyle{plain}
+% Set roman numbering (i,ii,...) before the start of chapters
+\pagenumbering{roman}
+
+\input{IST-UL-Project-Report-Front_Cover}
+\cleardoublepage
+
+\tableofcontents
+\clearpage 
+\begingroup 
+    \let\clearpage\relax
+    \let\cleardoublepage\relax
+    \let\cleardoublepage\relax
+% List of tables
+\listoftables
+% Add entry in the table of contents as section
+\addcontentsline{toc}{section}{\listtablename}
+% List of figures
+\listoffigures
+% Add entry in the table of contents as section
+\addcontentsline{toc}{section}{\listfigurename}
+\endgroup
+
+\cleardoublepage
+% #############################################################################
+\chapter{Executive Summary}
+\chapter{Introduction}
+Acquiring a residential property represents one of the most significant financial and lifestyle decisions individuals face throughout their lives. The complexity arises not only from the substantial economic commitment involved but also from the need to balance numerous factors simultaneously, such as location, physical characteristics, future adaptability, and investment potential. When additional functional requirements are introduced, such as the possibility of generating rental income, the decision becomes increasingly multifaceted, requiring systematic analytical support to navigate effectively.
+This report documents a structured decision support intervention conducted within the Decision Support Models course (2025/2026). Working as decision analysts, our group collaborated with Filipe Pessoa to develop a multicriteria evaluation framework using M-MACBETH software. Filipe Pessoa is currently searching for a property in Torres Vedras that can accommodate his family while potentially operating as local accommodation. Given the variety of available properties and the competing priorities involved, a systematic approach is necessary to organize his preferences and compare alternatives in a transparent manner.
+The report begins by introducing Filipe Pessoa and describing the context surrounding his decision. A problem structuring phase follows, establishing which evaluation model best suits this situation. We then identify the criteria that matter most to the decision maker and describe the properties being considered. The core of the work involves building an additive value model through MACBETH, translating qualitative preferences into numerical scales and weights. The results are then analyzed, with particular attention to how sensitive the recommendations are to changes in weight or performance assessments. The report concludes with reflections on the process itself, documenting challenges encountered, and the decision maker's response to our findings.
+
+\chapter{Structure of the problem}
+\section{Decision context}
+
+Housing in Portugal holds a key position in family life and lasting financial security, rendering the process of finding an appropriate home one of the most important choices people must make. 
+When they grow old, they learn what kind of environment they want to live in, they learn that the market price is different when you are in a different country, that there are many different types of building, and that the standards are getting stricter. However, as families expand and their requirements become more specialized, selecting a residence becomes a more complex endeavor, requiring simultaneous consideration of comfort, convenience, safety, and financial viability.
+The Portuguese property market offers an extensive variety, including high-rise apartments, modest residential complexes, and individual or semi-detached homes with gardens or auxiliary structures.
+Different kinds of property have different upsides and downsides, which depend on physical stuff but also how well they are built, light, parking, if it needs to be fixed and the area around it. 
+Consequently, selecting a residence requires far more than a simple visit to a property; it requires a comprehensive assessment of multiple factors. 
+Portugal has seen more people wanting homes that can be used in different ways, especially because of tourism and short-term rentals. Several families are considering adding separate spaces to their homes for guests or to run small rental spots. 
+This trend mirrors broader economic and social changes, particularly the diversification of household income streams and the growing importance of housing as both a living space and a financial investment.
+At the same time, most people in Portugal are afraid of old buildings safety, humidity problems, as well as energy costs, and if they need to spend additional money on these concerns. Access to vital services such as healthcare facilities, stores, coffees, recreational spaces, and floor or sun orientation requirements, make the decision even tougher. All these factors make it even more challenging to intuitively determine which property offers the optimal balance of lifestyle, comfort and financial viability.
+In this context , choosing a home in Portugal is a complex task that demands careful analysis, given the wide range of available options and the multiple factors involved .When the intention is to acquire a property that may function as a permanent residence and a potential short-term rental unit, the difficulty increases even more.
+In such cases, a structured multicriteria decision-support approach is particularly valuable, as it helps to organise the decision-maker’s preferences, compare alternatives in a consistent manner, and ultimately identify the option that best meets long-term objectives and desired living conditions.
+
+
+
+% #############################################################################
+\section{Decision-maker}
+
+The decision-maker is Filipe Pessoa. He has 61 years old and was born in Valpaços, Vila Real.  He holds a pre-Bologna degree in Law, a master’s degree in Political Science and International Relations, and postgraduate qualifications in National Defense and in Foreign Policy. He holds the position of Colonel in the National Republican Guard (GNR), a role that requires skills in analytical thinking, accountability, and organized decision-making. Filipe engages in choral singing as a long-standing hobby, reflecting an appreciation for cultural and community-oriented activities. Currently, the decision-maker is in the process of identifying a new residence that will satisfy his intended residential requirements and may also meet local lodging needs (“Alojamento local”). Given that this process involves the careful consideration of personal comfort, lifestyle expectations, and investment factors, a structured multicriteria decision-support methodology is warranted.
+
+% #############################################################################
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{setspace}
+\onehalfspacing
+
+
+
+\section{Decision problem and decision support process}
+
+
+To structure the decision problem clearly, we conducted detailed interviews with Filipe Pessoa. These conversations explored not only what features he seeks in a property but also why those features matter to him and how they connect to his broader life goals. Several core priorities emerged that organize the decision maker's thinking:
+\paragraph{Location and Surroundings:} This fundamental objective emerged as central to Filipe Pessoa's vision for his future residence. Centrality within Torres Vedras is essential, enabling him to walk to cafés, pastelarias, the municipal market, and other local amenities. This reflects a broader desire for an active lifestyle with pedestrian access to daily services rather than automobile dependence. Proximity to healthcare facilities is highly valued for convenience and emergency access, while access to green spaces like Parque da Várzea contributes to recreational opportunities and environmental quality. The decision maker also values the ability to move around by bicycle when weather and distance permit. Interestingly, proximity to public transportation ranks as low priority, reinforcing his preference for walking or cycling for local movement. Additionally, maintaining reasonable distance from certain areas, such as zones near nightclubs or poorly lit districts, is considered desirable to ensure a peaceful residential environment.
+
+\paragraph{Property Features:} The property must possess specific physical characteristics that enable it to successfully accommodate both permanent family residence and local accommodation operations. A minimum T3 configuration with at least three bedrooms is mandatory, serving as a screening criterion that eliminates any properties failing to meet this requirement. Clear separation between family and guest areas is essential for maintaining privacy and independence, with buildings featuring 2-3 floors or houses with annexes offering the most promising layouts for achieving this dual functionality. The licensing feasibility for local accommodation represents an important consideration when evaluating property configuration options.
+
+At least two bathrooms represent another non-negotiable requirement, while elevator access in multi-story buildings is equally mandatory for consideration. Parking or garage availability constitutes another mandatory screening criterion that eliminates properties lacking this feature, regardless of performance on other dimensions.
+
+Solar orientation represents a critical factor and an absolute requirement: properties facing north are immediately eliminated from consideration, while south-west or east-west orientations are ideal for maximizing natural light and thermal comfort throughout the day. A spacious living room of 25-30 m$^2$ or larger matters significantly for family life and social activities. The overall property area should ideally exceed 100 m$^2$ to provide adequate space for both residential and guest accommodation functions.
+
+Sound insulation and climate control contribute to tranquility and year-round comfort, while efficient layouts without excessive corridors enhance functionality and flow. The property's floor location within a building also matters, with ground floor apartments being less desirable unless accompanied by private garden space, while very high floors may present access concerns. Outdoor space such as balconies, terraces, or gardens is valued for extending living areas and connecting with the environment, though not mandatory.
+
+The property's conservation state significantly influences its attractiveness. While Filipe Pessoa is willing to undertake renovations for energy efficiency or cosmetic improvements, he requires solid underlying construction with good structural integrity. Energy efficiency class represents a factor of interest, though improvements can be made through renovation. The type of home matters for achieving dual functionality, with apartment buildings of 2-3 floors or houses with annexes being particularly suitable for separating family residence from guest accommodation.
+
+Construction quality is essential, as the decision maker seeks properties built with concrete structures that provide a solid foundation for any necessary improvements. The building should not present problematic characteristics such as thin walls, excessive thermal bridges, or geometry that complicates renovation work.
+
+\paragraph{Quality of Life:} Beyond physical features, certain characteristics contribute to the subjective experience of living in the property. Adequate soundproofing is valued for creating a peaceful home environment, particularly important given the dual-use nature of the property where guests may come and go. Privacy represents another consideration, with properties offering some degree of visual separation from immediate neighbors being preferred, though not a decisive factor. Properties with windows at street level or ground-floor units directly facing pedestrian areas are less desirable due to reduced privacy.
+
+\paragraph{Financial Considerations:} While not the dominant concern, financial sustainability represents an important objective that establishes boundaries for the search. The purchase price is capped at approximately \euro 500,000 for move-in ready properties, or \euro 200,000 to \euro 400,000 for properties requiring significant renovation. While not an absolute eliminating factor, exceeding these limits would require exceptional justification based on other objectives.
+
+Interestingly, condominium fees and maintenance costs are considered less important in the decision-making process, suggesting Filipe Pessoa focuses on intrinsic property qualities and long-term value rather than monthly operational expenses. This reflects a long-term ownership perspective where the initial property selection matters more than ongoing costs, which are viewed as manageable and secondary to finding the right home.
+
+\vspace{1 cm}
+
+
+In this decision process, Filipe Pessoa is both the primary stakeholder and the decision maker. Our role as decision analysts is to structure his preferences into a coherent evaluation model, enabling systematic comparison of available alternatives. The challenge lies in capturing his authentic values while constructing a framework that provides transparency and consistency in assessment.
+
+
+\section{Evaluation model}
+
+To support the decision-maker in choosing the most suitable property, a multicriteria evaluation model based on an additive value approach was developed. The decision involves several factors that are not directly comparable, making intuitive evaluation difficult. A structured approach was therefore required to ensure that all relevant dimensions of the problem were incorporated and evaluated in a coherent way.  An additive value model was adpoted, following the classical formulation: 
+
+\[
+V(a) = \sum_{j=1}^{n} k_j \, v_j(a)
+\]
+
+\[
+\sum_{j=1}^{n} k_j = 1 
+\qquad \text{and} \qquad 
+k_j > 0 \quad (j = 1,\dots,n)
+\]
+
+\[
+\begin{aligned}
+V(a) &\text{: overall value of option } a \\
+v_j(a) &\text{: partial value of option } a \text{ on criterion } j \\
+k_j &\text{: scaling constant (relative weight) of criterion } j
+\end{aligned}
+\]
+Where V(a) represents the overall attractiveness of option a, vj(a) is the partial value of option a on criterion j and kj is the relative weight of criterion j. This modelling   approach allows the performance of each option to be assessed separately for each criterion and later combined into a single overall value.
+The development of the model followed an iterative process with the decision-maker. After identifying all relevant concerns and objectives, the criteria representing these dimensions were defined together with the decision-maker. For every criterion j, descriptors of performance and reference levels were established to operationalise the evaluation of the housing options. Using these descriptors, the decision-maker expressed qualitative judgements about differences in attractiveness, which were  translated into numerical partial value functions vj(a)  through the MACBETH judgement matrices.
+Once all value functions were constructed and validated, the relative importance of each criterion kj was determined using MACBETH’s weighting procedure. Based on swing comparisons, the decision-maker provided qualitative assessments that allowed the weights to be derived and adjusted until full consistency was achieved. With both the partial value functions vj(a) and weighting coefficients kj defined, the overall  value V(a) of each option could be calculated.
+Finally, the software will be used to conduct sensitivity and robustness analyses, allowing the stability of the results to be explored once the model is completed.
+
+
+
+
+%  #############################################################################
+\chapter {Structure of the model}
+\section {Screening criteria}
+
+Before applying the multicriteria evaluation model, a screening phase was conducted to eliminate alternatives that do not satisfy the decision-maker’s minimum requirements.
+The first mandatory condition concerns the location within the urban perimeter of Torres Vedras, as properties outside this area fail to guarantee the level of centrality, accessibility and daily convenience that the decision-maker considers indispensable. A second requirement relates to the peacefulness of the neighbourhood; alternatives situated in areas with excessive noise, nightlife concentration or low perceived tranquillity are excluded, as they would compromise everyday comfort and quality of life.
+Cycling was also identified as an important aspect of mobility. Consequently, only alternatives that provide suitable cycling conditions such as safe roads, moderate slopes, and adequate connections to the main services were retained. Properties located in areas where cycling would be unsafe, impractical or significantly hindered are excluded at this stage.
+In addition, although many aspects of the dwelling will be evaluated later in the model, certain structural features are treated as strict constraints. The presence of adequate security conditions including the general safety of the surrounding area and the basic protective characteristics of the building is considered non-negotiable, and properties that do not meet this minimum threshold are removed beforehand. Finally, the existence of an elevator is regarded as essential for apartments located on higher floors, ensuring adequate accessibility and long-term usability; therefore, apartments without an elevator are excluded, while houses are naturally not subject to this requirement.
+These screening criteria ensure that only alternatives compatible with the decision-maker’s fundamental expectations proceed to the subsequent stages of multicriteria evaluation
+
+\section { Criteria}
+
+
+
+
+\section { Descriptors of performance}
+\section { Options}
+\section { Performance profile}
+% #############################################################################
+
+
+\chapter{ Additive evaluation model }
+\section {Value functions/Preference scales}
+\section { Weighting coefficients}
+% #############################################################################
+
+\chapter{ Application of the additive evaluation model }
+\section{ Global attractiveness} 
+\section{Sensitivity analysis } 
+\section{ Robustness analysis } 
+
+
+\chapter { Conclusions and Recommendations}
+\bibliographystyle{IEEEtran}
+% > entries ordered in the order in which the citations appear, with numeric 
+% reference markers
+% External bibliography database file in the BibTeX format
+\cleardoublepage
+\bibliography{IST-UL-Project-Report_bib_DB}
+% Add entry in the table of contents as chapter
+\addcontentsline{toc}{chapter}{\bibname}
+% #############################################################################
+\end{document}
+% #############################################################################
+
