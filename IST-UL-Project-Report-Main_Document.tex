@@ -50,21 +50,6 @@ The influence diagram was then converted into a decision tree (Fig.~3), allowing
 
 By comparing the EMVs of the three alternatives, producing the electrolyser independently yields the highest Expected Monetary Value. Therefore, under a risk-neutral assumption, the optimal decision is to produce the electrolyser independently.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\linewidth]{Q1/diagramaa).png}
-    \caption{Influence Diagram}
-    \label{fig:influenceDiagrama}
-\end{figure}
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{Q1/DecisionTreea).png}
-    \caption{Decision tree}
-    \label{fig:DecisionTreea}
-\end{figure}
-
 \section{Question 1b}
 To determine the maximum amount H2People should be willing to pay for perfect information on future market performance, a revised decision tree was analysed assuming that sales outcomes are known before the production decision. In the corresponding influence diagram (Fig.~4), an information link is added from the \emph{Sales} chance node to the \emph{Production Strategy} decision node, indicating that the decision is made after the realisation of market conditions. Under perfect information, H2People behaves as a clairvoyant decision-maker, selecting for each sales outcome the strategy that maximises the Net Present Value, thus increasing the expected economic performance. Consequently, for each realised sales outcome, the company selects the production alternative
 that maximises the corresponding Net Present Value. The Expected Monetary Value under perfect information is therefore obtained as the probability weighted sum of these best conditional payoffs.
@@ -77,21 +62,6 @@ The Expected Value of Perfect Information (EVPI) is obtained as the difference b
 \end{equation}
 
 This value represents the maximum amount the company should be willing to pay for perfect information, since paying more than this amount would eliminate the economic benefit obtained from improved decision-making.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{Q1/diagramab).png}
-    \caption{Influence Diagram}
-    \label{fig:influencediagramb}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.85\linewidth]{Q1/precisiontreeb.png}
-    \caption{Decision Tree}
-    \label{fig:decisionTreeb}
-\end{figure}
-
 
 \section{Question 1c}
 
@@ -160,21 +130,6 @@ Downside risk analysis indicates negative 5\% quantiles for the two lowest price
 
 Based on both statistical indicators and graphical evidence, the selling price of 1.33~M€/unit emerges as the most attractive alternative among the scenarios considered.
 
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.5\textwidth]{Profit.png}
-\caption{Probability distribution of first-year Profit obtained from the Monte Carlo simulation}
-\label{fig:profit_dist}
-\end{figure}
- \begin{figure}[H]
-\centering
-\includegraphics[width=0.5\textwidth]{Cumulative.png}
-\caption{Ascending cumulative distribution}
-\label{fig:profit_dist}
-\end{figure}
-
-
 \section{Question 2b}
 
 The tornado diagram obtained from the Monte Carlo simulation provides a sensitivity ranking of the uncertain input variables according to their influence on the first-year Profit ($Y_1$). The analysis is based on regression coefficients, which measure both the strength and the direction of the relationship between each input variable and the model output.
@@ -201,16 +156,6 @@ the variability of Profit is more strongly affected by uncertainties in demand. 
 strategies aimed at improving sales performance are likely to have a greater impact on 
 profitability than marginal reductions in unit or fixed costs.
 
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.5\textwidth]{tornado_regression.png}
-\caption{Probability distribution of first-year Profit obtained from the Monte Carlo simulation}
-\label{fig:profit_dist}
-\end{figure}
-
-
-
 \section{Question 2c}
 
 After analysing profit considering three fixed selling price scenarios, the company decided to assess the impact on profit by assuming that the selling price follows the best price of competitors. Consequently, the selling price is now described by a Triangular distribution with parameters $E = 1.15$, $F = 1.17$, and $G = 1.33$ (in M\euro{} per unit). Additionally, after conducting market research, H2People concluded that the selling price and sales volume could be correlated with a coefficient of $-0.7$, reflecting the economic reality that higher prices tend to reduce demand.
@@ -236,14 +181,6 @@ P(Profit $<$ 0) & 0.050 (5.0\%) & 0.074 (7.4\%) \\
 
 According to the simulation results presented in Figure~\ref{fig:profit_dist_corr}, the mean profit obtained is 76.42 M\euro{}, with a standard deviation of 48.41 M\euro{}. The 5th percentile is located at 1.2 M\euro{} and the 95th percentile at 160.2 M\euro{}. The probability of obtaining negative profit is 0.050, or approximately 5.0\%, indicating a relatively low risk of incurring losses in the first year of operation.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\linewidth]{image.png}
-    \caption{Probability distribution of first-year Profit considering correlation between selling price and sales volume}
-    \label{fig:profit_dist_corr}
-\end{figure}
-
-
 Analysing the probability distribution of profit presented in Figure~\ref{fig:profit_dist_corr}, an approximately normal distribution is observed, with slight positive asymmetry (skewness of 0.2554), indicating a higher probability of extreme positive outcomes. The kurtosis of 2.8393 suggests that the distribution has slightly heavier tails than a standard normal distribution, reflecting the presence of some variability at the extremes.
 
 The negative correlation between selling price and sales volume introduces a stabilising effect on profit. When price increases, sales volume tends to decrease, and vice versa, which reduces the overall variability of profit compared to a scenario where these variables would be independent. This behaviour is consistent with the economic theory of price elasticity of demand and provides natural protection against extreme scenarios. Mathematically, this can be expressed as:
@@ -257,36 +194,11 @@ where the negative correlation between Sales Volume and Selling Price moderates 
 
 Examining the values presented in Table~\ref{tab:profit_2c}, it is possible to verify that, although similar, the statistics obtained when considering and when not considering the correlation between sales and selling price show some relevant differences. Firstly, when correlation is accounted for, the standard deviation is reduced by approximately 10.35 M\euro{} (from 58.76 M\euro{} to 48.41 M\euro{}), representing an 18\% reduction in profit dispersion. This indicates a reduction in the dispersion of the values obtained for Profit in each iteration, allowing for greater confidence in the results obtained and the analysis carried out. Next, we can see that the 5th percentile has increased from -8.77 M\euro{} to 1.2 M\euro{}, effectively eliminating most extreme negative scenarios, and the 95th percentile has decreased from 182.2 M\euro{} to 160.2 M\euro{}, once again reflecting the fact that the values obtained for Profit in the different iterations are not so dispersed, staying between 1.2 M\euro{} and 160.2 M\euro{}, with a 90\% probability, when correlation is considered.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\linewidth]{WhatsApp Image 2026-01-16 at 17.33.41.jpeg}
-    \caption{Probability distribution of first-year Profit without considering correlation between selling price and sales volume}
-    \label{fig:profit_dist_no_corr}
-\end{figure}
-
-
 Finally, considering the correlation, and as would be expected given the increase in the 5th percentile, the probability of profit being negative decreased by around 2.4 percentage points (from 7.4\% to 5.0\%). With this, we can conclude that although the average profit when correlation is considered is slightly lower, which would be expected since the correlation between selling price and sales is negative, the forecasts made for profit show less variation and are more reliable. In addition, there is less risk of making a loss. Figures~\ref{fig:profit_dist_corr} and~\ref{fig:profit_dist_no_corr} allow us to understand the analysis in a more visual way, and we can observe the greater amplitude between the maximum and minimum values when correlation is not considered.
 
 Comparing the results obtained for the new definition of selling price with the results obtained in Question 2a, where three selling price scenarios are considered, it can be seen that the statistics obtained in this question are similar to the statistics obtained for the second scenario which considers a unit selling price of 1.17 M\euro{}, which would be expected since the triangular distribution used to describe the sales price considers the price of 1.17 M\euro{} as the mode.
 
 Finally, as can be observed in Figures~\ref{fig:tornado_2c_corr} and~\ref{fig:tornado_2c_no_corr}, given that the selling price is no longer fixed for a given scenario and now follows a triangular distribution, variations in selling price also have an impact on Profit. However, sales volume, unit cost, and fixed costs remain the factors with the greatest impact on Profit and maintain the same ranking of importance, with sales volume standing out as the dominant factor. The tornado diagrams illustrate that sales volume exhibits the widest range of influence, followed by unit costs and fixed costs. The inclusion of selling price as a variable adds an additional layer of uncertainty, though its impact remains secondary compared to the volume-related factors.
-
-\begin{figure}[h]
-\centering
-\begin{minipage}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{WhatsApp Image 2026-01-16 at 17.50.21 (1).jpeg}
-    \caption{Tornado diagram for first-year Profit with correlation}
-    \label{fig:tornado_2c_corr}
-\end{minipage}
-\hfill
-\begin{minipage}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{WhatsApp Image 2026-01-16 at 17.37.28.jpeg}
-    \caption{Tornado diagram for first-year Profit without correlation}
-    \label{fig:tornado_2c_no_corr}
-\end{minipage}
-\end{figure}
 
 When comparing the tornado diagrams with and without correlation (Figures~\ref{fig:tornado_2c_corr} and~\ref{fig:tornado_2c_no_corr}), several key differences become evident. In the scenario without correlation, the selling price shows a markedly larger impact on profit variability, with variations spanning a wider range, whereas in the correlated scenario, the selling price impact is substantially diminished. This occurs because the correlation between selling price and sales volume creates a natural hedging effect: when the selling price increases (which would normally increase profit), sales volume decreases (which reduces profit), and vice versa. As a result, the individual impact of selling price on profit variability is partially offset by the inverse movement in sales volume. The tornado diagrams also confirm that sales volume remains the dominant factor in both scenarios, followed by unit costs and fixed costs, though the relative magnitudes differ between the correlated and non-correlated cases. This reinforces the stabilising role of the negative correlation in moderating profit uncertainty and demonstrates how market dynamics can serve as a natural risk mitigation mechanism.
 
@@ -334,23 +246,9 @@ The positive mean NPV of 149.02 M\euro{} indicates that, on average, the project
 
 However, the risk analysis reveals important aspects that must be considered. The high standard deviation (157.76 M\euro{}) indicates considerable dispersion of possible outcomes, reflecting substantial uncertainty associated with the project. The probability of 18.2\% of obtaining a negative NPV is not negligible and represents a significant risk that the project may destroy value rather than create it. The 5th percentile of -96 M\euro{} indicates that, in the most unfavourable scenarios (occurring in 5\% of simulations), the project can result in significant losses.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\linewidth]{WhatsApp Image 2026-01-16 at 17.42.04.jpeg}
-    \caption{Probability distribution of Net Present Value (NPV)}
-    \label{fig:npv_dist}
-\end{figure}
-
 Analysing the probability distribution of NPV presented in Figure~\ref{fig:npv_dist}, an approximately normal distribution is observed with slight positive asymmetry (skewness of 0.2554), suggesting a higher probability of extreme positive outcomes. The kurtosis of 2.8393 indicates that the distribution has slightly heavier tails than a standard normal distribution, reflecting some variability at the distribution extremes.
 
 As can be observed in the tornado diagram presented in Figure~\ref{fig:tornado_npv}, variations in the yearly growth rate also have an impact on NPV, although the factors with the greatest impact on NPV remain sales volume, unit cost, and fixed costs, these being the main factors to consider when making this decision. Sales volume maintains its position as the most influential factor, with the widest range spanning from approximately -200 M\euro{} to 320 M\euro{}, underlining the critical importance of market demand for the financial success of the project. Unit costs and fixed costs follow as secondary drivers, while the selling price and yearly growth rate exhibit comparatively smaller but still meaningful impacts on the final NPV.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\linewidth]{WhatsApp Image 2026-01-16 at 17.42.04 (1).jpeg}
-    \caption{Tornado diagram for Net Present Value (NPV)}
-    \label{fig:tornado_npv}
-\end{figure}
 
 The dominance of sales volume in driving NPV variability emphasises that strategies aimed at securing and expanding market share should be prioritised over marginal cost reductions. While cost control remains important, the project's financial viability is fundamentally tied to the company's ability to achieve and sustain adequate sales levels throughout the project lifetime.
 
@@ -406,9 +304,99 @@ Given that $CE < 0$, as indicated in Table~\ref{tab:utility_analysis}, the clear
 
 Alternative strategies that H2People might consider include seeking risk-sharing partnerships to reduce exposure to negative outcomes, implementing the project in phases with decision points to abandon if early results are unfavourable, securing external financing or insurance mechanisms to mitigate downside risk, or reconsidering the sale of the patent as a risk-free alternative, consistent with the recommendation from the decision tree analysis under risk aversion.
 
+\appendix
+\chapter{Figures}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Q1/diagramaa).png}
+    \caption{Influence Diagram (Question 1a)}
+    \label{fig:influenceDiagrama}
+\end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Q1/DecisionTreea).png}
+    \caption{Decision tree (Question 1a)}
+    \label{fig:DecisionTreea}
+\end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Q1/diagramab).png}
+    \caption{Influence Diagram (Question 1b)}
+    \label{fig:influencediagramb}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\linewidth]{Q1/precisiontreeb.png}
+    \caption{Decision Tree (Question 1b)}
+    \label{fig:decisionTreeb}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{Profit.png}
+\caption{Probability distribution of first-year Profit obtained from the Monte Carlo simulation (Question 2a)}
+\label{fig:profit_dist}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{Cumulative.png}
+\caption{Ascending cumulative distribution (Question 2a)}
+\label{fig:cumulative_dist}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{tornado_regression.png}
+\caption{Tornado diagram for first-year Profit (Question 2b)}
+\label{fig:tornado_regression}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{image.png}
+    \caption{Probability distribution of first-year Profit considering correlation between selling price and sales volume (Question 2c)}
+    \label{fig:profit_dist_corr}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{WhatsApp Image 2026-01-16 at 17.33.41.jpeg}
+    \caption{Probability distribution of first-year Profit without considering correlation between selling price and sales volume (Question 2c)}
+    \label{fig:profit_dist_no_corr}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{WhatsApp Image 2026-01-16 at 17.50.21 (1).jpeg}
+\caption{Tornado diagram for first-year Profit with correlation (Question 2c)}
+\label{fig:tornado_2c_corr}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{WhatsApp Image 2026-01-16 at 17.37.28.jpeg}
+\caption{Tornado diagram for first-year Profit without correlation (Question 2c)}
+\label{fig:tornado_2c_no_corr}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{WhatsApp Image 2026-01-16 at 17.42.04.jpeg}
+    \caption{Probability distribution of Net Present Value (NPV) (Question 2d)}
+    \label{fig:npv_dist}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{WhatsApp Image 2026-01-16 at 17.42.04 (1).jpeg}
+    \caption{Tornado diagram for Net Present Value (NPV) (Question 2d)}
+    \label{fig:tornado_npv}
+\end{figure}
 
 \begin{thebibliography}{1}
 \bibitem{Hammond1999}
