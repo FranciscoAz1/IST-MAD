@@ -1,7 +1,6 @@
-
-\documentclass[12pt,a4paper,oneside]{report}
+\documentclass[11pt,a4paper,oneside]{report}
 \input{./IST-UL-Project-Report-Preamble}
-
+\raggedbottom
 \begin{document}
 \pagestyle{plain}
 % Set roman numbering (i,ii,...) before the start of chapters
@@ -10,160 +9,418 @@
 \input{IST-UL-Project-Report-Front_Cover}
 \cleardoublepage
 
-\tableofcontents
-\clearpage 
-\begingroup 
-    \let\clearpage\relax
-    \let\cleardoublepage\relax
-    \let\cleardoublepage\relax
-% List of tables
-\listoftables
-% Add entry in the table of contents as section
-\addcontentsline{toc}{section}{\listtablename}
-% List of figures
-\listoffigures
-% Add entry in the table of contents as section
-\addcontentsline{toc}{section}{\listfigurename}
-\endgroup
 
-\cleardoublepage
-% #############################################################################
-\chapter{Executive Summary}
-\chapter{Introduction}
-Acquiring a residential property represents one of the most significant financial and lifestyle decisions individuals face throughout their lives. The complexity arises not only from the substantial economic commitment involved but also from the need to balance numerous factors simultaneously, such as location, physical characteristics, future adaptability, and investment potential. When additional functional requirements are introduced, such as the possibility of generating rental income, the decision becomes increasingly multifaceted, requiring systematic analytical support to navigate effectively.
-This report documents a structured decision support intervention conducted within the Decision Support Models course (2025/2026). Working as decision analysts, our group collaborated with Filipe Pessoa to develop a multicriteria evaluation framework using M-MACBETH software. Filipe Pessoa is currently searching for a property in Torres Vedras that can accommodate his family while potentially operating as local accommodation. Given the variety of available properties and the competing priorities involved, a systematic approach is necessary to organize his preferences and compare alternatives in a transparent manner.
-The report begins by introducing Filipe Pessoa and describing the context surrounding his decision. A problem structuring phase follows, establishing which evaluation model best suits this situation. We then identify the criteria that matter most to the decision maker and describe the properties being considered. The core of the work involves building an additive value model through MACBETH, translating qualitative preferences into numerical scales and weights. The results are then analyzed, with particular attention to how sensitive the recommendations are to changes in weight or performance assessments. The report concludes with reflections on the process itself, documenting challenges encountered, and the decision maker's response to our findings.
-
-\chapter{Structure of the problem}
-\section{Decision context}
-
-Housing in Portugal holds a key position in family life and lasting financial security, rendering the process of finding an appropriate home one of the most important choices people must make. 
-When they grow old, they learn what kind of environment they want to live in, they learn that the market price is different when you are in a different country, that there are many different types of building, and that the standards are getting stricter. However, as families expand and their requirements become more specialized, selecting a residence becomes a more complex endeavor, requiring simultaneous consideration of comfort, convenience, safety, and financial viability.
-The Portuguese property market offers an extensive variety, including high-rise apartments, modest residential complexes, and individual or semi-detached homes with gardens or auxiliary structures.
-Different kinds of property have different upsides and downsides, which depend on physical stuff but also how well they are built, light, parking, if it needs to be fixed and the area around it. 
-Consequently, selecting a residence requires far more than a simple visit to a property; it requires a comprehensive assessment of multiple factors. 
-Portugal has seen more people wanting homes that can be used in different ways, especially because of tourism and short-term rentals. Several families are considering adding separate spaces to their homes for guests or to run small rental spots. 
-This trend mirrors broader economic and social changes, particularly the diversification of household income streams and the growing importance of housing as both a living space and a financial investment.
-At the same time, most people in Portugal are afraid of old buildings safety, humidity problems, as well as energy costs, and if they need to spend additional money on these concerns. Access to vital services such as healthcare facilities, stores, coffees, recreational spaces, and floor or sun orientation requirements, make the decision even tougher. All these factors make it even more challenging to intuitively determine which property offers the optimal balance of lifestyle, comfort and financial viability.
-In this context , choosing a home in Portugal is a complex task that demands careful analysis, given the wide range of available options and the multiple factors involved .When the intention is to acquire a property that may function as a permanent residence and a potential short-term rental unit, the difficulty increases even more.
-In such cases, a structured multicriteria decision-support approach is particularly valuable, as it helps to organise the decision-maker’s preferences, compare alternatives in a consistent manner, and ultimately identify the option that best meets long-term objectives and desired living conditions.
+\pagenumbering{arabic}
 
 
-
-% #############################################################################
-\section{Decision-maker}
-
-The decision-maker is Filipe Pessoa. He has 61 years old and was born in Valpaços, Vila Real.  He holds a pre-Bologna degree in Law, a master’s degree in Political Science and International Relations, and postgraduate qualifications in National Defense and in Foreign Policy. He holds the position of Colonel in the National Republican Guard (GNR), a role that requires skills in analytical thinking, accountability, and organized decision-making. Filipe engages in choral singing as a long-standing hobby, reflecting an appreciation for cultural and community-oriented activities. Currently, the decision-maker is in the process of identifying a new residence that will satisfy his intended residential requirements and may also meet local lodging needs (“Alojamento local”). Given that this process involves the careful consideration of personal comfort, lifestyle expectations, and investment factors, a structured multicriteria decision-support methodology is warranted.
-
-% #############################################################################
-
-\onehalfspacing
+\chapter{Exercise 1: Influence diagrams and Decision Trees}
+\section{Question 1a}
+This project analyses a strategic decision faced by H2People regarding the commercialisation of an innovative hydrogen electrolyser. Despite its high efficiency, elevated production costs create uncertainty about market acceptance. The decision is supported using influence diagrams and decision trees to compare the available alternatives under uncertainty.
 
 
+Before proceeding with the analytical phase, it is necessary to clearly define the decision context by addressing a set of fundamental questions. This structured approach to framing decision problems follows the methodology proposed by Hammond, Keeney, and Raiffa in \textit{Smart Choices} (Chapter~7)~\cite{Hammond1999}.
 
-\section{Decision problem and decision support process}
+\paragraph{What are the decisions?}
+The decisions available to H2People are to produce the electrolyser independently, to produce it in partnership with another company, or to sell the patent.
 
+\paragraph{What are the key uncertainties?}
+The main uncertainty faced by H2People is related to the future market performance of the electrolyser, particularly the level of sales that may be achieved.
+\paragraph{What are the possible outcomes of these uncertainties?}
+Market performance is represented through three possible outcomes: strong sales, moderate sales, or weak sales.
+\paragraph{What are the chances of occurrence of each possible outcome?}
+Each sales outcome is associated with a probability of occurrence, reflecting H2People’s expectations based on forecasts and available market information.
 
-To structure the decision problem clearly, we conducted detailed interviews with Filipe Pessoa. These conversations explored not only what features he seeks in a property but also why those features matter to him and how they connect to his broader life goals. Several core priorities emerged that organize the decision maker's thinking:
-\paragraph{Location and Surroundings:} This fundamental objective emerged as central to Filipe Pessoa's vision for his future residence. Centrality within Torres Vedras is essential, enabling him to walk to cafés, pastelarias, the municipal market, and other local amenities. This reflects a broader desire for an active lifestyle with pedestrian access to daily services rather than automobile dependence. Proximity to healthcare facilities is highly valued for convenience and emergency access, while access to green spaces like Parque da Várzea contributes to recreational opportunities and environmental quality. The decision maker also values the ability to move around by bicycle when weather and distance permit. Interestingly, proximity to public transportation ranks as low priority, reinforcing his preference for walking or cycling for local movement. Additionally, maintaining reasonable distance from certain areas, such as zones near nightclubs or poorly lit districts, is considered desirable to ensure a peaceful residential environment.
+\paragraph{What are the consequences of each outcome?}
+Each combination of decision and market outcome leads to a specific financial consequence for H2People, expressed in monetary terms such as Net Present Value.
 
-\paragraph{Property Features:} The property must possess specific physical characteristics that enable it to successfully accommodate both permanent family residence and local accommodation operations. A minimum T3 configuration with at least three bedrooms is mandatory, serving as a screening criterion that eliminates any properties failing to meet this requirement. Clear separation between family and guest areas is essential for maintaining privacy and independence, with buildings featuring 2-3 floors or houses with annexes offering the most promising layouts for achieving this dual functionality. The licensing feasibility for local accommodation represents an important consideration when evaluating property configuration options.
+By clearly defining these elements, the decision problem faced by H2People can be formally modelled and analysed, enabling the identification of the strategy that maximises the expected value and, subsequently, the assessment of the influence of risk attitudes on the final decision.
 
-At least two bathrooms represent another non-negotiable requirement, while elevator access in multi-story buildings is equally mandatory for consideration. Parking or garage availability constitutes another mandatory screening criterion that eliminates properties lacking this feature, regardless of performance on other dimensions.
+Based on this framework, the first influence diagram was constructed (Fig.~2). The model includes a decision node, a chance node, and a value node. The decision node, \emph{Production Strategy}, represents H2People’s choice between independent production, partnership, or selling the patent. The chance node, \emph{Sales}, captures market uncertainty through three possible outcomes: strong, moderate, and weak demand, each with an associated probability.
 
-Solar orientation represents a critical factor and an absolute requirement: properties facing north are immediately eliminated from consideration, while south-west or east-west orientations are ideal for maximizing natural light and thermal comfort throughout the day. A spacious living room of 25-30 m$^2$ or larger matters significantly for family life and social activities. The overall property area should ideally exceed 100 m$^2$ to provide adequate space for both residential and guest accommodation functions.
+The value node, \emph{Net Present Value (NPV)}, represents the financial outcome associated with each combination of production strategy and sales scenario. Expressed in terms of NPV and depicted as a diamond, it provides the criterion for comparing the alternative strategies.
 
-Sound insulation and climate control contribute to tranquility and year-round comfort, while efficient layouts without excessive corridors enhance functionality and flow. The property's floor location within a building also matters, with ground floor apartments being less desirable unless accompanied by private garden space, while very high floors may present access concerns. Outdoor space such as balconies, terraces, or gardens is valued for extending living areas and connecting with the environment, though not mandatory.
-
-The property's conservation state significantly influences its attractiveness. While Filipe Pessoa is willing to undertake renovations for energy efficiency or cosmetic improvements, he requires solid underlying construction with good structural integrity. Energy efficiency class represents a factor of interest, though improvements can be made through renovation. The type of home matters for achieving dual functionality, with apartment buildings of 2-3 floors or houses with annexes being particularly suitable for separating family residence from guest accommodation.
-
-Construction quality is essential, as the decision maker seeks properties built with concrete structures that provide a solid foundation for any necessary improvements. The building should not present problematic characteristics such as thin walls, excessive thermal bridges, or geometry that complicates renovation work.
-
-\paragraph{Quality of Life:} Beyond physical features, certain characteristics contribute to the subjective experience of living in the property. Adequate soundproofing is valued for creating a peaceful home environment, particularly important given the dual-use nature of the property where guests may come and go. Privacy represents another consideration, with properties offering some degree of visual separation from immediate neighbors being preferred, though not a decisive factor. Properties with windows at street level or ground-floor units directly facing pedestrian areas are less desirable due to reduced privacy.
-
-\paragraph{Financial Considerations:} While not the dominant concern, financial sustainability represents an important objective that establishes boundaries for the search. The purchase price is capped at approximately \euro 500,000 for move-in ready properties, or \euro 200,000 to \euro 400,000 for properties requiring significant renovation. While not an absolute eliminating factor, exceeding these limits would require exceptional justification based on other objectives.
-
-Interestingly, condominium fees and maintenance costs are considered less important in the decision-making process, suggesting Filipe Pessoa focuses on intrinsic property qualities and long-term value rather than monthly operational expenses. This reflects a long-term ownership perspective where the initial property selection matters more than ongoing costs, which are viewed as manageable and secondary to finding the right home.
-
-\vspace{1 cm}
+The influence diagram was then converted into a decision tree (Fig.~3), allowing the calculation of the Expected Monetary Value (EMV) for each strategic alternative.
 
 
-In this decision process, Filipe Pessoa is both the primary stakeholder and the decision maker. Our role as decision analysts is to structure his preferences into a coherent evaluation model, enabling systematic comparison of available alternatives. The challenge lies in capturing his authentic values while constructing a framework that provides transparency and consistency in assessment.
+\begin{align}
+\text{EMV (Sell the patent)} &= 180 \, \text{M€} \\
+\text{EMV (Produce independently)} &= 309.85 \, \text{M€} \\
+\text{EMV (Produce through partnership)} &= 154.93 \, \text{M€}
+\end{align}
+
+By comparing the EMVs of the three alternatives, producing the electrolyser independently yields the highest Expected Monetary Value. Therefore, under a risk-neutral assumption, the optimal decision is to produce the electrolyser independently.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Q1/diagramaa).png}
+    \caption{Influence Diagram}
+    \label{fig:influenceDiagrama}
+\end{figure}
 
 
-\section{Evaluation model}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Q1/DecisionTreea).png}
+    \caption{Decision tree}
+    \label{fig:DecisionTreea}
+\end{figure}
 
-To support the decision-maker in choosing the most suitable property, a multicriteria evaluation model based on an additive value approach was developed. The decision involves several factors that are not directly comparable, making intuitive evaluation difficult. A structured approach was therefore required to ensure that all relevant dimensions of the problem were incorporated and evaluated in a coherent way.  An additive value model was adpoted, following the classical formulation: 
+\section{Question 1b}
+To determine the maximum amount H2People should be willing to pay for perfect information on future market performance, a revised decision tree was analysed assuming that sales outcomes are known before the production decision. In the corresponding influence diagram (Fig.~4), an information link is added from the \emph{Sales} chance node to the \emph{Production Strategy} decision node, indicating that the decision is made after the realisation of market conditions. Under perfect information, H2People behaves as a clairvoyant decision-maker, selecting for each sales outcome the strategy that maximises the Net Present Value, thus increasing the expected economic performance. Consequently, for each realised sales outcome, the company selects the production alternative
+that maximises the corresponding Net Present Value. The Expected Monetary Value under perfect information is therefore obtained as the probability weighted sum of these best conditional payoffs.
 
-\[
-V(a) = \sum_{j=1}^{n} k_j \, v_j(a)
-\]
+ For this scenario, the decision tree considering perfect information was constructed, resulting in an Expected Monetary Value (EMV) of $417.25\,\text{M€}$.
 
-\[
-\sum_{j=1}^{n} k_j = 1 
-\qquad \text{and} \qquad 
-k_j > 0 \quad (j = 1,\dots,n)
-\]
+The Expected Value of Perfect Information (EVPI) is obtained as the difference between the EMV with perfect information and the EMV of the original problem:
+\begin{equation}
+\text{EVPI} = 417.25 - 309.85 = 107.40 \, \text{M€}
+\end{equation}
 
-\[
-\begin{aligned}
-V(a) &\text{: overall value of option } a \\
-v_j(a) &\text{: partial value of option } a \text{ on criterion } j \\
-k_j \ \ &\text{: scaling constant (relative weight) of criterion } j
-\end{aligned}
-\]
-Where V(a) represents the overall attractiveness of option a, vj(a) is the partial value of option a on criterion j and kj is the relative weight of criterion j. This modelling   approach allows the performance of each option to be assessed separately for each criterion and later combined into a single overall value.
-The development of the model followed an iterative process with the decision-maker. After identifying all relevant concerns and objectives, the criteria representing these dimensions were defined together with the decision-maker. For every criterion j, descriptors of performance and reference levels were established to operationalise the evaluation of the housing options. Using these descriptors, the decision-maker expressed qualitative judgements about differences in attractiveness, which were  translated into numerical partial value functions vj(a)  through the MACBETH judgement matrices.
-Once all value functions were constructed and validated, the relative importance of each criterion kj was determined using MACBETH’s weighting procedure. Based on swing comparisons, the decision-maker provided qualitative assessments that allowed the weights to be derived and adjusted until full consistency was achieved. With both the partial value functions vj(a) and weighting coefficients kj defined, the overall  value V(a) of each option could be calculated.
-Finally, the software will be used to conduct sensitivity and robustness analyses, allowing the stability of the results to be explored once the model is completed.
+This value represents the maximum amount the company should be willing to pay for perfect information, since paying more than this amount would eliminate the economic benefit obtained from improved decision-making.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Q1/diagramab).png}
+    \caption{Influence Diagram}
+    \label{fig:influencediagramb}
+\end{figure}
 
-
-
-%  #############################################################################
-\chapter {Structure of the model}
-\section {Screening criteria}
-
-Before applying the multicriteria evaluation model, a screening phase was conducted to eliminate alternatives that do not satisfy the decision-maker’s minimum requirements.
-The first mandatory condition concerns the location within the urban perimeter of Torres Vedras, as properties outside this area fail to guarantee the level of centrality, accessibility and daily convenience that the decision-maker considers indispensable. A second requirement relates to the peacefulness of the neighbourhood; alternatives situated in areas with excessive noise, nightlife concentration or low perceived tranquillity are excluded, as they would compromise everyday comfort and quality of life.
-Cycling was also identified as an important aspect of mobility. Consequently, only alternatives that provide suitable cycling conditions such as safe roads, moderate slopes, and adequate connections to the main services were retained. Properties located in areas where cycling would be unsafe, impractical or significantly hindered are excluded at this stage.
-In addition, although many aspects of the dwelling will be evaluated later in the model, certain structural features are treated as strict constraints. The presence of adequate security conditions including the general safety of the surrounding area and the basic protective characteristics of the building is considered non-negotiable, and properties that do not meet this minimum threshold are removed beforehand. Finally, the existence of an elevator is regarded as essential for apartments located on higher floors, ensuring adequate accessibility and long-term usability; therefore, apartments without an elevator are excluded, while houses are naturally not subject to this requirement.
-These screening criteria ensure that only alternatives compatible with the decision-maker’s fundamental expectations proceed to the subsequent stages of multicriteria evaluation
-
-\section { Criteria}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\linewidth]{Q1/precisiontreeb.png}
+    \caption{Decision Tree}
+    \label{fig:decisionTreeb}
+\end{figure}
 
 
+\section{Question 1c}
+
+To incorporate market research into the decision problem, an extended influence diagram was developed by adding a chance node representing the \emph{Market Research Report}, with possible outcomes of favourable, neutral, or unfavourable. An information link connects this node to the \emph{Production Strategy} decision node, indicating that the decision is taken after observing the report outcome. Posterior sales probabilities were obtained using Bayes' theorem.
+
+The resulting decision tree yields an Expected Monetary Value (EMV) of 351.51~M€. The optimal strategy is to produce independently when the report is favourable or neutral, and to sell the patent when it is unfavourable, highlighting the value of market research in reducing exposure to adverse market conditions.
+
+\section{Question 1d}
+
+The maximum amount that H2People should be willing to pay for the market research corresponds to the Expected Value of Imperfect Information (EVII), calculated as the difference between the EMV with market research and the original EMV:
+
+\begin{equation}
+\text{ EVII} = 351.51 - 309.85 = 41.66 \text{ M€}
+\end{equation}
+
+This value represents the economic benefit of incorporating imperfect information into the decision process. The EVII of 41.66 M€ is substantially lower than the EVPI of 107.40 M€ calculated in Question 1b, reflecting that the market research provides imperfect rather than perfect information. The company should only commission the study if its cost remains below 41.66 M€.
+
+\section{Question 1e}
+
+To assess the impact of risk aversion on the optimal strategy, an exponential utility function was applied with a risk tolerance parameter of $R = 10$ M€, reflecting a significant risk-averse profile:
+
+\begin{equation}
+U(x) = 1 - e^{-x/10}
+\end{equation}
+
+The decision tree from Question~1c was re-evaluated using certainty equivalents instead of Expected Monetary Values. The resulting certainty equivalent is 181~M€, significantly lower than the EMV of 351.51~M€ obtained under risk neutrality. Moreover, the optimal strategy changes to selling the patent irrespective of the market research outcome.
+
+Under risk aversion with $R = 10$~M€, the exponential utility function strongly penalises adverse outcomes, making the potential loss of 177~M€ under weak sales unacceptable. As a result, the guaranteed return of 181~M€ from selling the patent becomes the preferred strategy, fully eliminating downside risk and confirming the expected behaviour of a risk-averse decision-maker.
 
 
-\section { Descriptors of performance}
-\section { Options}
-\section { Performance profile}
-% #############################################################################
+\chapter{Exercise 2: Monte Carlo Simulation}
+
+
+\section*{Question 2 -- Monte Carlo Simulation}
+
+In this question, a Monte Carlo simulation is used to assess the risk associated with producing the electrolyser. Unlike the previous deterministic analysis, uncertainty is explicitly incorporated in the key profitability drivers: sales volume, selling price, unit cost, and fixed costs.
+
+By modelling these variables as independent stochastic inputs, the simulation estimates the probability distribution of first-year profit, providing a more realistic representation of expected performance and downside risk. The results support the subsequent statistical and sensitivity analyses.
+
+\section{Question 2a}
+
+\subsection*{Question 2a) Monte Carlo Simulation Results}
+
+The Monte Carlo simulation was used to obtain the probability distribution of the first-year Profit for the three selling price scenarios considered. Table~\ref{tab:profit_stats} presents the main statistical measures of Profit for each scenario, including the mean, standard deviation, selected percentiles, and the probability of incurring losses.
+
+\begin{table}[h!]
+\centering
+\caption{Statistical measures of first-year Profit for different selling price scenarios}
+\label{tab:profit_stats}
+\begin{tabular}{lccc}
+\hline
+\textbf{Scenario price (M€/unit)} & \textbf{1.15} & \textbf{1.17} & \textbf{1.33} \\
+\hline
+Mean  & 44.24 & 52.94 & 122.54 \\
+Standard deviation & 49.11 & 50.69 & 64.42 \\
+5th percentile  & -30.01 & -23.79 & 24.61 \\
+95th percentile  & 131.82 & 143.59 & 237.98 \\
+$P(\text{Profit}<0)$ & 0.201 & 0.207 & 0.213 \\
+\hline
+\end{tabular}
+\end{table}
+
+The results show that expected Profit increases significantly with the selling price, rising from approximately 44.2~M€ at 1.15~M€/unit to 52.9~M€ at 1.17~M€/unit, and reaching 122.5~M€ in the highest price scenario. This increase is accompanied by higher dispersion, as reflected by the growing standard deviation, highlighting the trade-off between higher expected returns and increased uncertainty.
+
+Downside risk analysis indicates negative 5\% quantiles for the two lowest price scenarios, while the highest price scenario exhibits a positive 5th percentile, suggesting improved protection against extreme losses. Graphical analysis confirms a rightward shift of the Profit distributions and cumulative curves as the selling price increases, with higher prices associated with greater variability but more favourable outcomes overall.
+
+Based on both statistical indicators and graphical evidence, the selling price of 1.33~M€/unit emerges as the most attractive alternative among the scenarios considered.
 
 
 
-\chapter{ Additive evaluation model }
-\section {Value functions/Preference scales}
-
-\section { Weighting coefficients}
-% #############################################################################
-
-\chapter{ Application of the additive evaluation model }
-\section{ Global attractiveness} 
-\section{Sensitivity analysis } 
-\section{ Robustness analysis } 
 
 
-\chapter { Conclusions and Recommendations}
-\bibliographystyle{IEEEtran}
-% > entries ordered in the order in which the citations appear, with numeric 
-% reference markers
-% External bibliography database file in the BibTeX format
-\cleardoublepage
-\bibliography{IST-UL-Project-Report_bib_DB}
-% Add entry in the table of contents as chapter
-\addcontentsline{toc}{chapter}{\bibname}
-% #############################################################################
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{Profit.png}
+\caption{Probability distribution of first-year Profit obtained from the Monte Carlo simulation}
+\label{fig:profit_dist}
+\end{figure}
+ \begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{Cumulative.png}
+\caption{Ascending cumulative distribution}
+\label{fig:profit_dist}
+\end{figure}
+
+
+\section{Question 2b}
+
+The tornado diagram obtained from the Monte Carlo simulation provides a sensitivity ranking of the uncertain input variables according to their influence on the first-year Profit ($Y_1$). The analysis is based on regression coefficients, which measure both the strength and the direction of the relationship between each input variable and the model output.
+
+In this study, Profit is defined as:
+\begin{equation}
+\text{Profit} = \text{Sales Volume} \times (\text{Selling Price} - \text{Unit Cost}) - \text{Fixed Costs}
+\end{equation}
+
+The results indicate that \textit{Sales Volume} is the dominant driver of Profit variability across all analysed selling price scenarios. This variable exhibits strong positive regression coefficients, increasing from approximately 0.74 to 0.86 as the selling price rises. This behaviour demonstrates that variations in sales volume have a substantial and amplified effect on Profit, particularly at higher selling prices.
+
+Both \textit{Unit Cost} and \textit{Fixed Costs} present negative regression coefficients, 
+confirming that increases in these variables lead to a reduction in Profit. Their influence is 
+significantly smaller than that of Sales Volume and remains secondary across all price 
+scenarios. In addition, the magnitude of the coefficients associated with Fixed Costs decreases 
+as the selling price rises (from approximately $-0.44$ to $-0.33$), indicating that higher 
+selling prices partially mitigate the adverse impact of fixed cost variability on Profit. 
+For Unit Cost, although the coefficients remain negative in all scenarios, their magnitude is 
+also reduced in the highest price scenario.
+
+Overall, the tornado diagram highlights that Profit uncertainty is primarily driven by 
+market-related factors rather than cost-related ones. While cost control remains important, 
+the variability of Profit is more strongly affected by uncertainties in demand. Consequently, 
+strategies aimed at improving sales performance are likely to have a greater impact on 
+profitability than marginal reductions in unit or fixed costs.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{tornado_regression.png}
+\caption{Probability distribution of first-year Profit obtained from the Monte Carlo simulation}
+\label{fig:profit_dist}
+\end{figure}
+
+
+
+\section{Question 2c}
+
+After analysing profit considering three fixed selling price scenarios, the company decided to assess the impact on profit by assuming that the selling price follows the best price of competitors. Consequently, the selling price is now described by a Triangular distribution with parameters $E = 1.15$, $F = 1.17$, and $G = 1.33$ (in M\euro{} per unit). Additionally, after conducting market research, H2People concluded that the selling price and sales volume could be correlated with a coefficient of $-0.7$, reflecting the economic reality that higher prices tend to reduce demand.
+
+Table~\ref{tab:profit_2c} presents the statistical measures for the first-year Profit considering the new selling price distribution. Since the market research only indicates the possibility of correlation between selling price and sales volume, statistical measures were obtained for situations both with and without correlation, enabling a better understanding of how this correlation affects profit under the new scenario established in this question.
+
+\begin{table}[h]
+\centering
+\caption{Statistical measures of first-year Profit}
+\label{tab:profit_2c}
+\begin{tabular}{lcc}
+\hline
+\textbf{Measure} & \textbf{With Correlation} & \textbf{Without Correlation} \\
+\hline
+Mean & 76.42 M\euro{} & 79.13 M\euro{} \\
+Standard Deviation & 48.41 M\euro{} & 58.76 M\euro{} \\
+5th Percentile & 1.2 M\euro{} & -8.77 M\euro{} \\
+95th Percentile & 160.2 M\euro{} & 182.2 M\euro{} \\
+P(Profit $<$ 0) & 0.050 (5.0\%) & 0.074 (7.4\%) \\
+\hline
+\end{tabular}
+\end{table}
+
+According to the simulation results presented in Figure~\ref{fig:profit_dist_corr}, the mean profit obtained is 76.42 M\euro{}, with a standard deviation of 48.41 M\euro{}. The 5th percentile is located at 1.2 M\euro{} and the 95th percentile at 160.2 M\euro{}. The probability of obtaining negative profit is 0.050, or approximately 5.0\%, indicating a relatively low risk of incurring losses in the first year of operation.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{image.png}
+    \caption{Probability distribution of first-year Profit considering correlation between selling price and sales volume}
+    \label{fig:profit_dist_corr}
+\end{figure}
+
+
+Analysing the probability distribution of profit presented in Figure~\ref{fig:profit_dist_corr}, an approximately normal distribution is observed, with slight positive asymmetry (skewness of 0.2554), indicating a higher probability of extreme positive outcomes. The kurtosis of 2.8393 suggests that the distribution has slightly heavier tails than a standard normal distribution, reflecting the presence of some variability at the extremes.
+
+The negative correlation between selling price and sales volume introduces a stabilising effect on profit. When price increases, sales volume tends to decrease, and vice versa, which reduces the overall variability of profit compared to a scenario where these variables would be independent. This behaviour is consistent with the economic theory of price elasticity of demand and provides natural protection against extreme scenarios. Mathematically, this can be expressed as:
+
+\begin{equation}
+\text{Profit} = \text{Sales Volume} \times (\text{Selling Price} - \text{Unit Cost}) - \text{Fixed Costs}
+\label{eq:profit_formula}
+\end{equation}
+
+where the negative correlation between Sales Volume and Selling Price moderates the combined effect on profit.
+
+Examining the values presented in Table~\ref{tab:profit_2c}, it is possible to verify that, although similar, the statistics obtained when considering and when not considering the correlation between sales and selling price show some relevant differences. Firstly, when correlation is accounted for, the standard deviation is reduced by approximately 10.35 M\euro{} (from 58.76 M\euro{} to 48.41 M\euro{}), representing an 18\% reduction in profit dispersion. This indicates a reduction in the dispersion of the values obtained for Profit in each iteration, allowing for greater confidence in the results obtained and the analysis carried out. Next, we can see that the 5th percentile has increased from -8.77 M\euro{} to 1.2 M\euro{}, effectively eliminating most extreme negative scenarios, and the 95th percentile has decreased from 182.2 M\euro{} to 160.2 M\euro{}, once again reflecting the fact that the values obtained for Profit in the different iterations are not so dispersed, staying between 1.2 M\euro{} and 160.2 M\euro{}, with a 90\% probability, when correlation is considered.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{WhatsApp Image 2026-01-16 at 17.33.41.jpeg}
+    \caption{Probability distribution of first-year Profit without considering correlation between selling price and sales volume}
+    \label{fig:profit_dist_no_corr}
+\end{figure}
+
+
+Finally, considering the correlation, and as would be expected given the increase in the 5th percentile, the probability of profit being negative decreased by around 2.4 percentage points (from 7.4\% to 5.0\%). With this, we can conclude that although the average profit when correlation is considered is slightly lower, which would be expected since the correlation between selling price and sales is negative, the forecasts made for profit show less variation and are more reliable. In addition, there is less risk of making a loss. Figures~\ref{fig:profit_dist_corr} and~\ref{fig:profit_dist_no_corr} allow us to understand the analysis in a more visual way, and we can observe the greater amplitude between the maximum and minimum values when correlation is not considered.
+
+Comparing the results obtained for the new definition of selling price with the results obtained in Question 2a, where three selling price scenarios are considered, it can be seen that the statistics obtained in this question are similar to the statistics obtained for the second scenario which considers a unit selling price of 1.17 M\euro{}, which would be expected since the triangular distribution used to describe the sales price considers the price of 1.17 M\euro{} as the mode.
+
+Finally, as can be observed in Figures~\ref{fig:tornado_2c_corr} and~\ref{fig:tornado_2c_no_corr}, given that the selling price is no longer fixed for a given scenario and now follows a triangular distribution, variations in selling price also have an impact on Profit. However, sales volume, unit cost, and fixed costs remain the factors with the greatest impact on Profit and maintain the same ranking of importance, with sales volume standing out as the dominant factor. The tornado diagrams illustrate that sales volume exhibits the widest range of influence, followed by unit costs and fixed costs. The inclusion of selling price as a variable adds an additional layer of uncertainty, though its impact remains secondary compared to the volume-related factors.
+
+\begin{figure}[h]
+\centering
+\begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{WhatsApp Image 2026-01-16 at 17.50.21 (1).jpeg}
+    \caption{Tornado diagram for first-year Profit with correlation}
+    \label{fig:tornado_2c_corr}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{WhatsApp Image 2026-01-16 at 17.37.28.jpeg}
+    \caption{Tornado diagram for first-year Profit without correlation}
+    \label{fig:tornado_2c_no_corr}
+\end{minipage}
+\end{figure}
+
+When comparing the tornado diagrams with and without correlation (Figures~\ref{fig:tornado_2c_corr} and~\ref{fig:tornado_2c_no_corr}), several key differences become evident. In the scenario without correlation, the selling price shows a markedly larger impact on profit variability, with variations spanning a wider range, whereas in the correlated scenario, the selling price impact is substantially diminished. This occurs because the correlation between selling price and sales volume creates a natural hedging effect: when the selling price increases (which would normally increase profit), sales volume decreases (which reduces profit), and vice versa. As a result, the individual impact of selling price on profit variability is partially offset by the inverse movement in sales volume. The tornado diagrams also confirm that sales volume remains the dominant factor in both scenarios, followed by unit costs and fixed costs, though the relative magnitudes differ between the correlated and non-correlated cases. This reinforces the stabilising role of the negative correlation in moderating profit uncertainty and demonstrates how market dynamics can serve as a natural risk mitigation mechanism.
+
+\section{Question 2d}
+
+For a more comprehensive evaluation of the project's economic viability, the first-year profit calculated previously was used as the basis for projecting cash flows over a four-year time horizon. The cash flows for subsequent years (years 2, 3, and 4) were modelled considering a stochastic annual growth rate, represented by a Normal distribution with mean 2\% and standard deviation 0.5\%. This approach allows capturing the inherent uncertainty in the future evolution of the business, recognising that growth is not deterministic but subject to market variability.
+
+The calculation of the Net Present Value (NPV) considered an initial investment of 100 M\euro{} in year zero and a discount rate of 10\%, reflecting the opportunity cost of capital and the risk associated with the project. The formula applied was:
+
+\begin{equation}
+\text{NPV} = \sum_{t=1}^{4} \frac{CF_t}{(1 + r)^t} - \text{Initial Investment}
+\label{eq:npv_formula}    ~~\cite[2]
+\end{equation}
+
+where $r = 0.10$ is the discount rate and the cash flows for each year were calculated by successively applying the stochastic growth rate to the first-year profit:
+
+\begin{align}
+CF_2 &= CF_1 \times (1 + g_2) \label{eq:cf2} \\
+CF_3 &= CF_2 \times (1 + g_3) \label{eq:cf3} \\
+CF_4 &= CF_3 \times (1 + g_4) \label{eq:cf4}
+\end{align}
+
+where $g_t \sim N(0.02, 0.005^2)$ represents the stochastic growth rate for year $t$.
+
+The Monte Carlo simulation enabled obtaining the probabilistic distribution of NPV, providing a comprehensive view of the risk and return associated with the project. The results obtained are presented in Table~\ref{tab:npv_stats}.
+
+\begin{table}[h]
+\centering
+\caption{Statistical measures of Net Present Value (NPV)}
+\label{tab:npv_stats}
+\begin{tabular}{lc}
+\hline
+\textbf{Measure} & \textbf{Value} \\
+\hline
+Mean NPV & 149.02 M\euro{} \\
+Standard Deviation & 157.76 M\euro{} \\
+5th Percentile & -96 M\euro{} \\
+95th Percentile & 422 M\euro{} \\
+P(NPV $<$ 0) & 0.182 (18.2\%) \\
+\hline
+\end{tabular}
+\end{table}
+
+The positive mean NPV of 149.02 M\euro{} indicates that, on average, the project is expected to generate substantial financial value, as the expected cash inflows significantly exceed the initial investment when discounted over the project's lifespan. This result is encouraging from a financial perspective and suggests that the project has the potential to create value for the company.
+
+However, the risk analysis reveals important aspects that must be considered. The high standard deviation (157.76 M\euro{}) indicates considerable dispersion of possible outcomes, reflecting substantial uncertainty associated with the project. The probability of 18.2\% of obtaining a negative NPV is not negligible and represents a significant risk that the project may destroy value rather than create it. The 5th percentile of -96 M\euro{} indicates that, in the most unfavourable scenarios (occurring in 5\% of simulations), the project can result in significant losses.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{WhatsApp Image 2026-01-16 at 17.42.04.jpeg}
+    \caption{Probability distribution of Net Present Value (NPV)}
+    \label{fig:npv_dist}
+\end{figure}
+
+Analysing the probability distribution of NPV presented in Figure~\ref{fig:npv_dist}, an approximately normal distribution is observed with slight positive asymmetry (skewness of 0.2554), suggesting a higher probability of extreme positive outcomes. The kurtosis of 2.8393 indicates that the distribution has slightly heavier tails than a standard normal distribution, reflecting some variability at the distribution extremes.
+
+As can be observed in the tornado diagram presented in Figure~\ref{fig:tornado_npv}, variations in the yearly growth rate also have an impact on NPV, although the factors with the greatest impact on NPV remain sales volume, unit cost, and fixed costs, these being the main factors to consider when making this decision. Sales volume maintains its position as the most influential factor, with the widest range spanning from approximately -200 M\euro{} to 320 M\euro{}, underlining the critical importance of market demand for the financial success of the project. Unit costs and fixed costs follow as secondary drivers, while the selling price and yearly growth rate exhibit comparatively smaller but still meaningful impacts on the final NPV.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{WhatsApp Image 2026-01-16 at 17.42.04 (1).jpeg}
+    \caption{Tornado diagram for Net Present Value (NPV)}
+    \label{fig:tornado_npv}
+\end{figure}
+
+The dominance of sales volume in driving NPV variability emphasises that strategies aimed at securing and expanding market share should be prioritised over marginal cost reductions. While cost control remains important, the project's financial viability is fundamentally tied to the company's ability to achieve and sustain adequate sales levels throughout the project lifetime.
+
+In conclusion, although the project presents a positive and attractive mean NPV of 149.02 M\euro{}, the high variability of results and the non-negligible probability of losses (18.2\%) require careful analysis of the company's risk tolerance before making the final investment decision. The company should evaluate its risk appetite and how it aligns with the potential risks and returns of this project, as well as the potential impact of this project on the company's long-term strategy and goals.
+
+\section{Question 2e}
+
+The final analysis of the project incorporates Utility Theory to evaluate the investment decision from the perspective of a company with significant risk aversion. Unlike previous analyses based on Expected Monetary Value (EMV) or mean NPV, which assume risk neutrality, this approach recognises that decision-makers may asymmetrically value potential gains and losses, being particularly sensitive to negative outcomes.
+
+H2People exhibits a risk tolerance of $R = 10$ M\euro{}, reflecting an extremely conservative profile regarding financial uncertainty. To incorporate this preference into the analysis, an exponential utility function was applied with the form:
+
+\begin{equation}
+U(x) = 1 - e^{-x/R}
+\label{eq:utility_function}
+\end{equation}
+
+where $x$ represents the financial outcome (in this case, the project's NPV) and $R = 10$ M\euro{} is the risk tolerance parameter. This function is characterised by strongly penalising negative outcomes, mathematically capturing the company's risk aversion. The smaller the value of $R$, the greater the risk aversion, and in H2People's case, an $R$ of only 10 M\euro{} compared to a project with an initial investment of 100 M\euro{} and potential results ranging between -96 M\euro{} and 422 M\euro{} indicates particularly high risk aversion.
+
+The Certainty Equivalent (CE) was calculated using the formula:
+
+\begin{equation}
+CE = -R \times \ln\left(\mathbb{E}\left[e^{-x/R}\right]\right)
+\label{eq:certainty_equivalent}
+\end{equation}
+
+This value represents the monetary amount that the company would be willing to accept with absolute certainty rather than face the distribution of uncertain project outcomes. According to the simulation performed, the CE obtained is -224.29 M\euro{}.
+
+\begin{table}[h]
+\centering
+\caption{Utility Analysis and Certainty Equivalent}
+\label{tab:utility_analysis}
+\begin{tabular}{lc}
+\hline
+\textbf{Parameter} & \textbf{Value} \\
+\hline
+Risk Tolerance ($R$) & 10.000 M\euro{} \\
+Mean NPV & 149.02 M\euro{} \\
+Certainty Equivalent (CE) & -224.29 M\euro{} \\
+Decision & Do not proceed \\
+\hline
+\end{tabular}
+\end{table}
+
+This negative value of significant magnitude indicates that, from the company's utility perspective, accepting the project is equivalent to accepting a certain loss of 224.29 M\euro{}, despite the mean NPV being positive (149.02 M\euro{}). This apparent contradiction results from the combination of two critical factors: (1) the company's high risk aversion, represented by a tolerance of only 10 M\euro{}, and (2) the significant dispersion of possible project outcomes, with a standard deviation of 157.76 M\euro{} and a probability of 18.2\% of negative results.
+
+The exponential utility function with $R = 10$ M\euro{} penalises unfavourable scenarios so heavily that the expected value of utility becomes negative, even considering favourable scenarios. Essentially, for a company with this risk aversion profile, the possibility of losing 96 M\euro{} or more (which occurs in 5\% of cases) is so unacceptable that it completely outweighs the potential benefit of positive scenarios.
+
+To better understand this phenomenon, consider that the exponential utility function exhibits increasing absolute risk aversion. For small values of $R$ relative to the scale of potential outcomes, even moderate losses receive disproportionately large negative utility values. When these utilities are averaged across all simulation outcomes, the heavily weighted negative scenarios dominate the calculation, resulting in a negative expected utility and, consequently, a negative certainty equivalent.
+
+This result is consistent with the analysis performed in Question 1e, where a similar risk tolerance of 10 M\euro{} was applied to the original decision problem. In that context, the optimal strategy shifted from producing the electrolyser independently (under risk neutrality) to selling the patent regardless of market research outcomes. The guaranteed return from selling the patent, though lower in expected value terms, became preferable because it eliminated downside risk entirely.
+
+Given that $CE < 0$, as indicated in Table~\ref{tab:utility_analysis}, the clear and unequivocal recommendation is that the project should not proceed in its current form. Although the project presents a positive and significant mean NPV (149.02 M\euro{}) and a reasonable probability of success (81.8\%), the level of risk involved clearly exceeds H2People's risk tolerance. For a company with this risk aversion profile, the uncertainty associated with the project makes it financially unacceptable from the perspective of maximising expected utility.
+
+Alternative strategies that H2People might consider include seeking risk-sharing partnerships to reduce exposure to negative outcomes, implementing the project in phases with decision points to abandon if early results are unfavourable, securing external financing or insurance mechanisms to mitigate downside risk, or reconsidering the sale of the patent as a risk-free alternative, consistent with the recommendation from the decision tree analysis under risk aversion.
+
+
+
+
+
+\begin{thebibliography}{1}
+\bibitem{Hammond1999}
+J.~S. Hammond, R.~L. Keeney, and H.~Raiffa,
+\textit{Smart Choices: A Practical Guide to Making Better Decisions},
+Harvard Business School Press, Boston, MA, 1999, Chapter~7.
+\end{thebibliography}
+
 \end{document}
 % #############################################################################
 
