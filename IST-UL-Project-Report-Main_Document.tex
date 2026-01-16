@@ -15,24 +15,55 @@
 
 \chapter{Exercise 1: Influence diagrams and Decision Trees}
 \section{Question 1a}
-This project analyses a strategic decision faced by H2People regarding the commercialisation of an innovative hydrogen electrolyser. Despite its high efficiency, elevated production costs create uncertainty about market acceptance. The decision is supported using influence diagrams and decision trees to compare the available alternatives under uncertainty.
 
 
-The decision problem is framed following Hammond, Keeney, and Raiffa's methodology~\cite{Hammond1999}. H2People faces three strategic options: independent production, partnership, or patent sale. The key uncertainty is market demand (strong, moderate, or weak sales), each with associated probabilities. Financial consequences are measured in Net Present Value (NPV). This structure enables formal analysis to identify the strategy maximising expected value while assessing risk attitudes.
 
-The influence diagram (Fig.~2) includes a decision node (\emph{Production Strategy}), a chance node (\emph{Sales}), and a value node (\emph{NPV}). The decision tree (Fig.~3) yields EMVs: independent production (309.85 M€), patent sale (180 M€), and partnership (154.93 M€). Under risk neutrality, independent production is optimal.
+Before proceeding with the analytical phase, it is necessary to clearly define the decision context by addressing a set of fundamental questions. This structured approach to framing decision problems follows the methodology proposed by Hammond, Keeney, and Raiffa in \textit{Smart Choices} (Chapter~7)~\cite{Hammond1999}.
+
+\paragraph{What are the decisions?}
+The decisions available to H2People are to produce the electrolyser independently, to produce it in partnership with another company, or to sell the patent.
+
+\paragraph{What are the key uncertainties?}
+The main uncertainty faced by H2People is related to the future market performance of the electrolyser, particularly the level of sales that may be achieved.
+\paragraph{What are the possible outcomes of these uncertainties?}
+Market performance is represented through three possible outcomes: strong sales, moderate sales, or weak sales.
+\paragraph{What are the chances of occurrence of each possible outcome?}
+Each sales outcome is associated with a probability of occurrence, reflecting H2People’s expectations based on forecasts and available market information.
+
+\paragraph{What are the consequences of each outcome?}
+Each combination of decision and market outcome leads to a specific financial consequence for H2People, expressed in monetary terms such as Net Present Value.
+
+By clearly defining these elements, the decision problem faced by H2People can be formally modelled and analysed, enabling the identification of the strategy that maximises the expected value and, subsequently, the assessment of the influence of risk attitudes on the final decision.
+
+Based on this framework, the first influence diagram was constructed (Fig.~2). The model includes a decision node, a chance node, and a value node. The decision node, \emph{Production Strategy}, represents H2People’s choice between independent production, partnership, or selling the patent. The chance node, \emph{Sales}, captures market uncertainty through three possible outcomes: strong, moderate, and weak demand, each with an associated probability.
+
+The value node, \emph{Net Present Value (NPV)}, represents the financial outcome associated with each combination of production strategy and sales scenario. Expressed in terms of NPV and depicted as a diamond, it provides the criterion for comparing the alternative strategies.
+
+The influence diagram was then converted into a decision tree (Fig.~3), allowing the calculation of the Expected Monetary Value (EMV) for each strategic alternative.
+By comparing the EMVs of the three alternatives, producing the electrolyser independently yields the highest Expected Monetary Value. Therefore, under a risk-neutral assumption, the optimal decision is to produce the electrolyser independently.The influence diagram (Fig.~2) includes a decision node (\emph{Production Strategy}), a chance node (\emph{Sales}), and a value node (\emph{NPV}). The decision tree (Fig.~3) yields EMVs: independent production (309.85 M€), patent sale (180 M€), and partnership (154.93 M€). Under risk neutrality, independent production is optimal.
+
 
 \section{Question 1b}
-With perfect information on market outcomes, H2People can select the optimal strategy for each scenario, yielding an EMV of 417.25 M€ (Fig.~4).
 
-The Expected Value of Perfect Information (EVPI) is obtained as the difference between the EMV with perfect information and the EMV of the original problem:
+To evaluate the value of perfect information, a revised decision tree was analysed assuming that sales outcomes are known before the production decision. In the corresponding influence diagram (Fig.~4), an information link from the \emph{Sales} node to the \emph{Production Strategy} node indicates that decisions are taken after market conditions are realised.
+
+Under perfect information, H2People selects for each sales outcome the strategy that maximises the Net Present Value. The Expected Monetary Value with perfect information is therefore obtained as the probability-weighted sum of these optimal conditional payoffs.
+
+
+ For this scenario, the decision tree considering perfect information was constructed, resulting in an Expected Monetary Value (EMV) of $417.25\,\text{M€}$.
+With perfect information on market outcomes, H2People can select the optimal strategy for each scenario, yielding an EMV of 417.25 M€ (Fig.~4).
+With perfect information on market outcomes, H2People can select the optimal strategy for each scenario, yielding an EMV of 417.25 M€ (Fig. \ref{fig:decisionTreeb}).
+
 \begin{equation}
 \text{EVPI} = 417.25 - 309.85 = 107.40 \, \text{M€}
 \end{equation}
 
 \section{Question 1c}
+To incorporate market research into the decision problem, an extended influence diagram was developed by adding a chance node representing the \emph{Market Research Report}, with possible outcomes of favourable, neutral, or unfavourable. An information link connects this node to the \emph{Production Strategy} decision node, indicating that the decision is taken after observing the report outcome. Posterior sales probabilities were obtained using Bayes' theorem.
 
+The resulting decision tree yields an Expected Monetary Value (EMV) of 351.51~M€. The optimal strategy is to produce independently when the report is favourable or neutral, and to sell the patent when it is unfavourable, highlighting the value of market research in reducing exposure to adverse market conditions.
 Adding a Market Research Report node (favourable, neutral, unfavourable) with posterior probabilities from Bayes' theorem yields EMV = 351.51 M€. The optimal strategy: produce independently (favourable/neutral reports) or sell the patent (unfavourable).
+
 
 \section{Question 1d}
 
@@ -50,6 +81,7 @@ The study should only be commissioned if costs remain below 41.66 M€.
 \section{Question 1e}
 
 With exponential utility function ($R = 10$ M€: $U(x) = 1 - e^{-x/10}$), the certainty equivalent is 181 M€ (vs. EMV: 351.51 M€). The optimal strategy shifts to patent sale regardless of market research, as the utility function penalises the potential 177 M€ loss under weak sales.
+
 
 
 \chapter{Exercise 2: Monte Carlo Simulation}
