@@ -107,23 +107,6 @@ By modelling these variables as independent stochastic inputs, the simulation es
 
 The Monte Carlo simulation was used to obtain the probability distribution of the first-year Profit for the three selling price scenarios considered. Table~\ref{tab:profit_stats} presents the main statistical measures of Profit for each scenario, including the mean, standard deviation, selected percentiles, and the probability of incurring losses.
 
-\begin{table}[h!]
-\centering
-\caption{Statistical measures of first-year Profit for different selling price scenarios}
-\label{tab:profit_stats}
-\begin{tabular}{lccc}
-\hline
-\textbf{Scenario price (M€/unit)} & \textbf{1.15} & \textbf{1.17} & \textbf{1.33} \\
-\hline
-Mean  & 44.24 & 52.94 & 122.54 \\
-Standard deviation & 49.11 & 50.69 & 64.42 \\
-5th percentile  & -30.01 & -23.79 & 24.61 \\
-95th percentile  & 131.82 & 143.59 & 237.98 \\
-$P(\text{Profit}<0)$ & 0.201 & 0.207 & 0.213 \\
-\hline
-\end{tabular}
-\end{table}
-
 The results show that expected Profit increases significantly with the selling price, rising from approximately 44.2~M€ at 1.15~M€/unit to 52.9~M€ at 1.17~M€/unit, and reaching 122.5~M€ in the highest price scenario. This increase is accompanied by higher dispersion, as reflected by the growing standard deviation, highlighting the trade-off between higher expected returns and increased uncertainty.
 
 Downside risk analysis indicates negative 5\% quantiles for the two lowest price scenarios, while the highest price scenario exhibits a positive 5th percentile, suggesting improved protection against extreme losses. Graphical analysis confirms a rightward shift of the Profit distributions and cumulative curves as the selling price increases, with higher prices associated with greater variability but more favourable outcomes overall.
@@ -161,23 +144,6 @@ profitability than marginal reductions in unit or fixed costs.
 After analysing profit considering three fixed selling price scenarios, the company decided to assess the impact on profit by assuming that the selling price follows the best price of competitors. Consequently, the selling price is now described by a Triangular distribution with parameters $E = 1.15$, $F = 1.17$, and $G = 1.33$ (in M\euro{} per unit). Additionally, after conducting market research, H2People concluded that the selling price and sales volume could be correlated with a coefficient of $-0.7$, reflecting the economic reality that higher prices tend to reduce demand.
 
 Table~\ref{tab:profit_2c} presents the statistical measures for the first-year Profit considering the new selling price distribution. Since the market research only indicates the possibility of correlation between selling price and sales volume, statistical measures were obtained for situations both with and without correlation, enabling a better understanding of how this correlation affects profit under the new scenario established in this question.
-
-\begin{table}[h]
-\centering
-\caption{Statistical measures of first-year Profit}
-\label{tab:profit_2c}
-\begin{tabular}{lcc}
-\hline
-\textbf{Measure} & \textbf{With Correlation} & \textbf{Without Correlation} \\
-\hline
-Mean & 76.42 M\euro{} & 79.13 M\euro{} \\
-Standard Deviation & 48.41 M\euro{} & 58.76 M\euro{} \\
-5th Percentile & 1.2 M\euro{} & -8.77 M\euro{} \\
-95th Percentile & 160.2 M\euro{} & 182.2 M\euro{} \\
-P(Profit $<$ 0) & 0.050 (5.0\%) & 0.074 (7.4\%) \\
-\hline
-\end{tabular}
-\end{table}
 
 According to the simulation results presented in Figure~\ref{fig:profit_dist_corr}, the mean profit obtained is 76.42 M\euro{}, with a standard deviation of 48.41 M\euro{}. The 5th percentile is located at 1.2 M\euro{} and the 95th percentile at 160.2 M\euro{}. The probability of obtaining negative profit is 0.050, or approximately 5.0\%, indicating a relatively low risk of incurring losses in the first year of operation.
 
@@ -228,23 +194,6 @@ where $g_t \sim N(0.02, 0.005^2)$ represents the stochastic growth rate for year
 
 The Monte Carlo simulation enabled obtaining the probabilistic distribution of NPV, providing a comprehensive view of the risk and return associated with the project. The results obtained are presented in Table~\ref{tab:npv_stats}.
 
-\begin{table}[h]
-\centering
-\caption{Statistical measures of Net Present Value (NPV)}
-\label{tab:npv_stats}
-\begin{tabular}{lc}
-\hline
-\textbf{Measure} & \textbf{Value} \\
-\hline
-Mean NPV & 149.02 M\euro{} \\
-Standard Deviation & 157.76 M\euro{} \\
-5th Percentile & -96 M\euro{} \\
-95th Percentile & 422 M\euro{} \\
-P(NPV $<$ 0) & 0.182 (18.2\%) \\
-\hline
-\end{tabular}
-\end{table}
-
 The positive mean NPV of 149.02 M\euro{} indicates that, on average, the project is expected to generate substantial financial value, as the expected cash inflows significantly exceed the initial investment when discounted over the project's lifespan. This result is encouraging from a financial perspective and suggests that the project has the potential to create value for the company.
 
 However, the risk analysis reveals important aspects that must be considered. The high standard deviation (157.76 M\euro{}) indicates considerable dispersion of possible outcomes, reflecting substantial uncertainty associated with the project. The probability of 18.2\% of obtaining a negative NPV is not negligible and represents a significant risk that the project may destroy value rather than create it. The 5th percentile of -96 M\euro{} indicates that, in the most unfavourable scenarios (occurring in 5\% of simulations), the project can result in significant losses.
@@ -279,9 +228,76 @@ CE = -R \times \ln\left(\mathbb{E}\left[e^{-x/R}\right]\right)
 
 This value represents the monetary amount that the company would be willing to accept with absolute certainty rather than face the distribution of uncertain project outcomes. According to the simulation performed, the CE obtained is -224.29 M\euro{}.
 
-\begin{table}[h]
+As shown in Table~\ref{tab:utility_analysis}, this negative value of significant magnitude indicates that, from the company's utility perspective, accepting the project is equivalent to accepting a certain loss of 224.29 M\euro{}, despite the mean NPV being positive (149.02 M\euro{}). This apparent contradiction results from the combination of two critical factors: (1) the company's high risk aversion, represented by a tolerance of only 10 M\euro{}, and (2) the significant dispersion of possible project outcomes, with a standard deviation of 157.76 M\euro{} and a probability of 18.2\% of negative results.
+
+The exponential utility function with $R = 10$ M\euro{} penalises unfavourable scenarios so heavily that the expected value of utility becomes negative, even considering favourable scenarios. Essentially, for a company with this risk aversion profile, the possibility of losing 96 M\euro{} or more (which occurs in 5\% of cases) is so unacceptable that it completely outweighs the potential benefit of positive scenarios.
+
+To better understand this phenomenon, consider that the exponential utility function exhibits increasing absolute risk aversion. For small values of $R$ relative to the scale of potential outcomes, even moderate losses receive disproportionately large negative utility values. When these utilities are averaged across all simulation outcomes, the heavily weighted negative scenarios dominate the calculation, resulting in a negative expected utility and, consequently, a negative certainty equivalent.
+
+This result is consistent with the analysis performed in Question 1e, where a similar risk tolerance of 10 M\euro{} was applied to the original decision problem. In that context, the optimal strategy shifted from producing the electrolyser independently (under risk neutrality) to selling the patent regardless of market research outcomes. The guaranteed return from selling the patent, though lower in expected value terms, became preferable because it eliminated downside risk entirely.
+
+Given that $CE < 0$, as indicated in Table~\ref{tab:utility_analysis}, the clear and unequivocal recommendation is that the project should not proceed in its current form. Although the project presents a positive and significant mean NPV (149.02 M\euro{}) and a reasonable probability of success (81.8\%), the level of risk involved clearly exceeds H2People's risk tolerance. For a company with this risk aversion profile, the uncertainty associated with the project makes it financially unacceptable from the perspective of maximising expected utility.
+
+Alternative strategies that H2People might consider include seeking risk-sharing partnerships to reduce exposure to negative outcomes, implementing the project in phases with decision points to abandon if early results are unfavourable, securing external financing or insurance mechanisms to mitigate downside risk, or reconsidering the sale of the patent as a risk-free alternative, consistent with the recommendation from the decision tree analysis under risk aversion.
+
+\appendix
+
+\chapter{Tables}
+
+\begin{table}[H]
 \centering
-\caption{Utility Analysis and Certainty Equivalent}
+\caption{Statistical measures of first-year Profit for different selling price scenarios (Question 2a)}
+\label{tab:profit_stats}
+\begin{tabular}{lccc}
+\hline
+\textbf{Scenario price (M€/unit)} & \textbf{1.15} & \textbf{1.17} & \textbf{1.33} \\
+\hline
+Mean  & 44.24 & 52.94 & 122.54 \\
+Standard deviation & 49.11 & 50.69 & 64.42 \\
+5th percentile  & -30.01 & -23.79 & 24.61 \\
+95th percentile  & 131.82 & 143.59 & 237.98 \\
+$P(\text{Profit}<0)$ & 0.201 & 0.207 & 0.213 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Statistical measures of first-year Profit (Question 2c)}
+\label{tab:profit_2c}
+\begin{tabular}{lcc}
+\hline
+\textbf{Measure} & \textbf{With Correlation} & \textbf{Without Correlation} \\
+\hline
+Mean & 76.42 M\euro{} & 79.13 M\euro{} \\
+Standard Deviation & 48.41 M\euro{} & 58.76 M\euro{} \\
+5th Percentile & 1.2 M\euro{} & -8.77 M\euro{} \\
+95th Percentile & 160.2 M\euro{} & 182.2 M\euro{} \\
+P(Profit $<$ 0) & 0.050 (5.0\%) & 0.074 (7.4\%) \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Statistical measures of Net Present Value (NPV) (Question 2d)}
+\label{tab:npv_stats}
+\begin{tabular}{lc}
+\hline
+\textbf{Measure} & \textbf{Value} \\
+\hline
+Mean NPV & 149.02 M\euro{} \\
+Standard Deviation & 157.76 M\euro{} \\
+5th Percentile & -96 M\euro{} \\
+95th Percentile & 422 M\euro{} \\
+P(NPV $<$ 0) & 0.182 (18.2\%) \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Utility Analysis and Certainty Equivalent (Question 2e)}
 \label{tab:utility_analysis}
 \begin{tabular}{lc}
 \hline
@@ -295,19 +311,6 @@ Decision & Do not proceed \\
 \end{tabular}
 \end{table}
 
-This negative value of significant magnitude indicates that, from the company's utility perspective, accepting the project is equivalent to accepting a certain loss of 224.29 M\euro{}, despite the mean NPV being positive (149.02 M\euro{}). This apparent contradiction results from the combination of two critical factors: (1) the company's high risk aversion, represented by a tolerance of only 10 M\euro{}, and (2) the significant dispersion of possible project outcomes, with a standard deviation of 157.76 M\euro{} and a probability of 18.2\% of negative results.
-
-The exponential utility function with $R = 10$ M\euro{} penalises unfavourable scenarios so heavily that the expected value of utility becomes negative, even considering favourable scenarios. Essentially, for a company with this risk aversion profile, the possibility of losing 96 M\euro{} or more (which occurs in 5\% of cases) is so unacceptable that it completely outweighs the potential benefit of positive scenarios.
-
-To better understand this phenomenon, consider that the exponential utility function exhibits increasing absolute risk aversion. For small values of $R$ relative to the scale of potential outcomes, even moderate losses receive disproportionately large negative utility values. When these utilities are averaged across all simulation outcomes, the heavily weighted negative scenarios dominate the calculation, resulting in a negative expected utility and, consequently, a negative certainty equivalent.
-
-This result is consistent with the analysis performed in Question 1e, where a similar risk tolerance of 10 M\euro{} was applied to the original decision problem. In that context, the optimal strategy shifted from producing the electrolyser independently (under risk neutrality) to selling the patent regardless of market research outcomes. The guaranteed return from selling the patent, though lower in expected value terms, became preferable because it eliminated downside risk entirely.
-
-Given that $CE < 0$, as indicated in Table~\ref{tab:utility_analysis}, the clear and unequivocal recommendation is that the project should not proceed in its current form. Although the project presents a positive and significant mean NPV (149.02 M\euro{}) and a reasonable probability of success (81.8\%), the level of risk involved clearly exceeds H2People's risk tolerance. For a company with this risk aversion profile, the uncertainty associated with the project makes it financially unacceptable from the perspective of maximising expected utility.
-
-Alternative strategies that H2People might consider include seeking risk-sharing partnerships to reduce exposure to negative outcomes, implementing the project in phases with decision points to abandon if early results are unfavourable, securing external financing or insurance mechanisms to mitigate downside risk, or reconsidering the sale of the patent as a risk-free alternative, consistent with the recommendation from the decision tree analysis under risk aversion.
-
-\appendix
 \chapter{Figures}
 
 \begin{figure}[H]
