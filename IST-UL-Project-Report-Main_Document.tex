@@ -35,24 +35,22 @@ Each combination of decision and market outcome leads to a specific financial co
 
 By clearly defining these elements, the decision problem faced by H2People can be formally modelled and analysed, enabling the identification of the strategy that maximises the expected value and, subsequently, the assessment of the influence of risk attitudes on the final decision.
 
-Based on this framework, the first influence diagram was constructed (Fig.~2). The model includes a decision node, a chance node, and a value node. The decision node, \emph{Production Strategy}, represents H2People’s choice between independent production, partnership, or selling the patent. The chance node, \emph{Sales}, captures market uncertainty through three possible outcomes: strong, moderate, and weak demand, each with an associated probability.
+Based on this framework, the first influence diagram was constructed (Fig. \ref{fig:influenceDiagrama}). The model includes a decision node, a chance node, and a value node. The decision node, \emph{Production Strategy}, represents H2People’s choice between independent production, partnership, or selling the patent. The chance node, \emph{Sales}, captures market uncertainty through three possible outcomes: strong, moderate, and weak demand, each with an associated probability.
 
 The value node, \emph{Net Present Value (NPV)}, represents the financial outcome associated with each combination of production strategy and sales scenario. Expressed in terms of NPV and depicted as a diamond, it provides the criterion for comparing the alternative strategies.
 
-The influence diagram was then converted into a decision tree (Fig.~3), allowing the calculation of the Expected Monetary Value (EMV) for each strategic alternative.
-By comparing the EMVs of the three alternatives, producing the electrolyser independently yields the highest Expected Monetary Value. Therefore, under a risk-neutral assumption, the optimal decision is to produce the electrolyser independently.The influence diagram (Fig.~2) includes a decision node (\emph{Production Strategy}), a chance node (\emph{Sales}), and a value node (\emph{NPV}). The decision tree (Fig.~3) yields EMVs: independent production (309.85 M€), patent sale (180 M€), and partnership (154.93 M€). Under risk neutrality, independent production is optimal.
+The influence diagram was then converted into a decision tree (Fig. \ref{fig:DecisionTreea}), allowing the calculation of the Expected Monetary Value (EMV) for each strategic alternative.
+By comparing the EMVs of the three alternatives, producing the electrolyser independently yields the highest Expected Monetary Value. Therefore, under a risk-neutral assumption, the optimal decision is to produce the electrolyser independently.The influence diagram (Fig. \ref{fig:influenceDiagrama}) includes a decision node (\emph{Production Strategy}), a chance node (\emph{Sales}), and a value node (\emph{NPV}). The decision tree (Fig. \ref{fig:DecisionTreea}) yields EMVs: independent production (309.85 M€), patent sale (180 M€), and partnership (154.93 M€). Under risk neutrality, independent production is optimal.
 
 
 \section{Question 1b}
 
-To evaluate the value of perfect information, a revised decision tree was analysed assuming that sales outcomes are known before the production decision. In the corresponding influence diagram (Fig.~4), an information link from the \emph{Sales} node to the \emph{Production Strategy} node indicates that decisions are taken after market conditions are realised.
+To evaluate the value of perfect information, a revised decision tree was analysed assuming that sales outcomes are known before the production decision. In the corresponding influence diagram, an information link from the \emph{Sales} node to the \emph{Production Strategy} node indicates that decisions are taken after market conditions are realised.
 
 Under perfect information, H2People selects for each sales outcome the strategy that maximises the Net Present Value. The Expected Monetary Value with perfect information is therefore obtained as the probability-weighted sum of these optimal conditional payoffs.
 
-
  For this scenario, the decision tree considering perfect information was constructed, resulting in an Expected Monetary Value (EMV) of $417.25\,\text{M€}$.
-With perfect information on market outcomes, H2People can select the optimal strategy for each scenario, yielding an EMV of 417.25 M€ (Fig.~4).
-With perfect information on market outcomes, H2People can select the optimal strategy for each scenario, yielding an EMV of 417.25 M€ (Fig. \ref{fig:decisionTreeb}).
+With perfect information on market outcomes, H2People can select the optimal strategy for each scenario, yielding an EMV of 417.25 M€.
 
 \begin{equation}
 \text{EVPI} = 417.25 - 309.85 = 107.40 \, \text{M€}
@@ -67,9 +65,6 @@ Adding a Market Research Report node (favourable, neutral, unfavourable) with po
 
 \section{Question 1d}
 
-\begin{equation}
-\text{ EVII} = 351.51 - 309.85 = 41.66 \text{ M€}
-\end{equation}
 The Expected Value of Imperfect Information (EVII):
 
 \begin{equation}
@@ -80,7 +75,7 @@ The study should only be commissioned if costs remain below 41.66 M€.
 
 \section{Question 1e}
 
-With exponential utility function ($R = 10$ M€: $U(x) = 1 - e^{-x/10}$), the certainty equivalent is 181 M€ (vs. EMV: 351.51 M€). The optimal strategy shifts to patent sale regardless of market research, as the utility function penalises the potential 177 M€ loss under weak sales.
+With exponential utility function ($R = 10$ M€: $U(x) = 1 - e^{-x/10}$), the certainty equivalent is 181 M€ . The optimal strategy shifts to patent sale regardless of market research, as the utility function penalises the potential 177 M€ loss under weak sales.
 
 
 
@@ -94,8 +89,6 @@ In this question, a Monte Carlo simulation is used to assess the risk associated
 By modelling these variables as independent stochastic inputs, the simulation estimates the probability distribution of first-year profit, providing a more realistic representation of expected performance and downside risk. The results support the subsequent statistical and sensitivity analyses.
 
 \section{Question 2a}
-
-\subsection*{Question 2a) Monte Carlo Simulation Results}
 
 Expected Profit increases with price: 44.2 M€ (1.15 M€/unit) → 122.5 M€ (1.33 M€/unit), with higher variability at higher prices. The 1.33 M€/unit scenario shows positive 5th percentile and superior downside protection, making it the most attractive alternative.
 
